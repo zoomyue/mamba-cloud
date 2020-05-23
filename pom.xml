@@ -7,6 +7,9 @@
     <groupId>com.mamba.cloud</groupId>
     <artifactId>mamba-cloud-platform</artifactId>
     <name>mamba-cloud-platform</name>
+    <modules>
+        <module>mamba-discovery-service</module>
+    </modules>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
