@@ -1,0 +1,9 @@
+server:
+  port: 8888
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    service-url: # Eureka Server 注册中心的地址，用于client 与 server进行交流
+      default-zone: http://mamba:mamba@localhost:8761/eureka/
