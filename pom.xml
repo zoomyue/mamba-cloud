@@ -7,12 +7,24 @@
     <groupId>com.mamba.cloud</groupId>
     <artifactId>mamba-cloud-platform</artifactId>
     <name>mamba-cloud-platform</name>
-    <modules>
-        <module>mamba-discovery-service</module>
-        <module>mamba-config-service</module>
-    </modules>
+
     <packaging>pom</packaging>
     <version>1.0.0</version>
+
+    <modules>
+        <!-- ================|核心模块|================ -->
+        <!-- 注册中心 -->
+        <module>mamba-discovery-service</module>
+        <!-- 配置中心 -->
+        <module>mamba-config-service</module>
+        <!-- 网关中心 -->
+        <!--        <module>mamba-gateway-service</module>-->
+        <!-- ================|测试模块|================ -->
+        <!-- 服务提供者 -->
+        <module>mamba-demo-provider-service</module>
+        <!-- 服务调用者 -->
+        <module>mamba-demo-consumer-service</module>
+    </modules>
 
     <properties>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
