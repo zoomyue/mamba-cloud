@@ -10,6 +10,11 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
+    <modules>
+        <module>mamba-demo-provider-service</module>
+        <module>mamba-demo-consumer-service</module>
+    </modules>
+
     <properties>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
         <alibaba-cloud.version>2.2.1.RELEASE</alibaba-cloud.version>

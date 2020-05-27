@@ -1,0 +1,11 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: mamba-demo-consumer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.9.134.15:8848
+      username: mamba
+      password: mamba
