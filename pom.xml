@@ -18,7 +18,7 @@
         <!-- 配置中心 -->
         <module>mamba-config-service</module>
         <!-- 网关中心 -->
-        <!--        <module>mamba-gateway-service</module>-->
+        <module>mamba-gateway-service</module>
         <!-- ================|测试模块|================ -->
         <!-- 服务提供者 -->
         <module>mamba-demo-provider-service</module>

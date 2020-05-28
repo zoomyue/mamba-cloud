@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: mamba_demo_provider_service
+          uri: lb://mamba-demo-provider-service
+          predicates:
+            - Path= /provider/**
+          filters:
+            # 去掉过滤器里面的第一段
+            - StripPrefix=1
+            # 应用Hystrix熔断与降级策略
+        #            - Hystrix=myCommandName
+        #            - name: Hystrix
+        #                args:
+        #                  name: fallbackcmd
+        #                  fallbackUri: forward:/fallbackController
+#        - id: throttle_filter_route
+#          uri: http://blueskykong.com
+#          order: 10000
+#          predicates:
+#            - Path: /rate/limit/**
+#          filters:
+#            name: RequestRateLimiter
+#            args:
+#              key-resolver: "#{@userKeyResolver}"
+#              # 令牌桶每秒填充的平均速率：每秒限制10次
+#              redis-rate-limiter.replenishRate: 10
+#              # 令牌桶容量：上限为20
+#              redis-rate-limiter.burstCapacity: 20

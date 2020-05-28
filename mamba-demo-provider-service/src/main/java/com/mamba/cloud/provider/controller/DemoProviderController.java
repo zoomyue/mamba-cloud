@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 public class DemoProviderController {
 
-
     @Value("${spring.application.name}")
     private String name;
 
