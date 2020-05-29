@@ -13,6 +13,7 @@
     <modules>
         <module>mamba-demo-provider-service</module>
         <module>mamba-demo-consumer-service</module>
+        <module>mamba-sentinel-service</module>
     </modules>
 
     <properties>

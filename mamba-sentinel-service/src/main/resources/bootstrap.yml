@@ -1,0 +1,18 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: mamba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.9.134.15:8848
+      config:
+        server-addr: 139.9.134.15:8848
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+      username: mamba
+      password: mamba
+  profiles:
+    active: dev
