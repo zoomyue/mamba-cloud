@@ -1,0 +1,52 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: mamba-discovery-service
+  profiles: node1
+# 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    service-url:
+      # Eureka Server 注册中心的地址，用于client 与 server进行交流
+      defaultZone: http://${eureka.instance.hostname}:8762/eureka/
+# java -jar xxx.jar --spring.profiles.active=node1
+
+---
+server:
+  port: 8762
+spring:
+  application:
+    name: mamba-discovery-service
+  profiles: node2
+# 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    service-url:
+      # Eureka Server 注册中心的地址，用于client 与 server进行交流
+      defaultZone: http://${eureka.instance.hostname}:8763/eureka/
+# java -jar xxx.jar --spring.profiles.active=node2
+
+---
+server:
+  port: 8763
+spring:
+  application:
+    name: mamba-discovery-service
+  profiles: node3
+# 注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    service-url:
+      # Eureka Server 注册中心的地址，用于client 与 server进行交流
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+# java -jar xxx.jar --spring.profiles.active=node3
