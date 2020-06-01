@@ -1,5 +1,7 @@
 server:
   port: 8888
+  # 设置为优雅停机
+  shutdown: graceful
 eureka:
   instance:
     hostname: localhost
